@@ -5,10 +5,10 @@ baseurl:
 url: https://piterjia.github.io/
 date_format: "ordinal"
 title: 云码
-subtitle: "云端写代码"
-description: "全栈技术爱好与追求者，足球爱好者"
-keywords: 洪军, hongjun, jnger, 云码, 全栈
-timezone: Asia/Tianjin
+subtitle: "Code can change the world, We change the code!"
+description: "全栈技术爱好与追求者，业余技术管理者，足球爱好者"
+keywords: 洪军, hongjun, jnger, java, 全栈, python
+timezone: China/Tianjin
 encoding: "utf-8"
 side_bar_repo_limit: 5
 repository: piterjia/piterjia.github.io
