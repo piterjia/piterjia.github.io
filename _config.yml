@@ -52,9 +52,9 @@ navs:
     href: /categories/
     label: 分类
 
-#   -
-#     href: /archives/
-#     label: 归档
+  -
+    href: /management/
+    label: 技术管理
 
 #   -
 #     href: /open-source/
