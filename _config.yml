@@ -121,6 +121,7 @@ gitment:
         client_id: d2e1cbbd298958076462
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
+# 参考：https://www.ppkanshu.com/index.php/post/4158.html
 gitalk:
     owner: piterjia
     repo: blog-comments
