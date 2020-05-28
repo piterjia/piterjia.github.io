@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 为什么需要Zookeeper
+title: ZooKeeper 原理简介与使用场景
 categories: Zookeeper
 description: ZooKeeper 是一个 分布式协调服务框架。
 keywords: Zookeeper, 中间件, Apache
 ---
 
-# ZooKeeper
+# ZooKeeper 原理简介与使用场景
 
 ### 什么是ZooKeeper
 ZooKeeper 由 Yahoo 开发，后来捐赠给了 Apache ，现已成为 Apache 顶级项目。ZooKeeper 是一个开源的分布式应用程序协调服务器，其为分布式系统提供一致性服务。其一致性是通过基于 Paxos 算法的 ZAB 协议完成的。其主要功能包括：配置维护、分布式同步、集群管理、分布式事务等。
@@ -179,7 +179,7 @@ ACL 为 Access Control Lists ，它是一种权限控制。在 zookeeper 中定�
 Watcher 为事件监听器，是 zk 非常重要的一个特性，很多功能都依赖于它，它有点类似于订阅的方式，即客户端向服务端 注册 指定的 watcher ，当服务端符合了 watcher 的某些事件或要求则会 向客户端发送事件通知 ，客户端收到通知后找到自己定义的 Watcher 然后 执行相应的回调方法 。
 
 #### watcher机制
-![](../images/posts/zookeeper/watcher机制.jpg)
+![](/images/posts/zookeeper/watcher机制.jpg)
 
 ## Zookeeper的几个典型应用场景
 前面说了这么多的理论知识，你可能听得一头雾水，这些玩意有啥用？能干啥事？别急，听我慢慢道来。
@@ -195,7 +195,7 @@ Watcher 为事件监听器，是 zk 非常重要的一个特性，很多功能�
 你想想为什么我们要创建临时节点？还记得临时节点的生命周期吗？master 挂了是不是代表会话断了？会话断了是不是意味着这个节点没了？还记得 watcher 吗？我们是不是可以 让其他不是 master 的节点监听节点的状态 ，比如说我们监听这个临时节点的父节点，如果子节点个数变了就代表 master 挂了，这个时候我们 触发回调函数进行重新选举 ，或者我们直接监听节点的状态，我们可以通过节点是否已经失去连接来判断 master 是否挂了等等。
 
 #### 选主
-![](./../images/posts/zookeeper/选主.jpg)
+![](/images/posts/zookeeper/选主.jpg)
 
 总的来说，我们可以完全 **利用 临时节点、节点状态 和 watcher 来实现选主的功能**，临时节点主要用来选举，节点状态和watcher 可以用来判断 master 的活性和进行重新选举。
 
@@ -237,14 +237,14 @@ zk 中不需要向 redis 那样考虑锁得不到释放的问题了，因为当�
 而 zookeeper 天然支持的 watcher 和 临时节点能很好的实现这些需求。我们可以为每条机器创建临时节点，并监控其父节点，如果子节点列表有变动（我们可能创建删除了临时节点），那么我们可以使用在其父节点绑定的 watcher 进行状态监控和回调。
 
 #### 集群管理
-![](../images/posts/zookeeper/集群管理.jpg)
+![](/images/posts/zookeeper/集群管理.jpg)
 
 至于注册中心也很简单，我们同样也是让 **服务提供者** 在 zookeeper 中创建一个临时节点并且将自己的 ip、port、调用方式 写入节点，当 服务消费者 需要进行调用的时候会 通过注册中心找到相应的服务的地址列表(IP端口什么的) ，并缓存到本地(方便以后调用)，当消费者调用服务时，不会再去请求注册中心，而是直接通过负载均衡算法从地址列表中取一个服务提供者的服务器调用服务。
 
 当服务提供者的某台服务器宕机或下线时，相应的地址会从服务提供者地址列表中移除。同时，注册中心会将新的服务地址列表发送给服务消费者的机器并缓存在消费者本机（当然你可以让消费者进行节点监听，我记得 Eureka 会先试错，然后再更新）。
 
 #### 注册中心
-![](../images/posts/zookeeper/注册中心.jpg)
+![](/images/posts/zookeeper/注册中心.jpg)
 
 ## 总结
 
