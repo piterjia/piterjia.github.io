@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://piterjia.github.io/
+url: https://piterjia.github.io
 date_format: "ordinal"
 title: 云码
 subtitle: "Code can change the world, We change the code!"
