@@ -124,8 +124,8 @@ gitment:
 gitalk:
     owner: piterjia
     repo: blog-comments
-    clientID: 9a7619088958e51e03ed
-    clientSecret: fe538ff0ec0fc11d3170f3a6f23ad34e222f8b94
+    clientID: db388e97352eeaeafb30
+    clientSecret: 14e93c15b35acb7ec88633e88c94154bdf8e847c
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
