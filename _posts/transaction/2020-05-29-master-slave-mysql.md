@@ -88,3 +88,9 @@ mysql> START SLAVE;
 ```
 show slave status;
 ```
+
+
+## 参考资料：
+
+https://blog.csdn.net/weixin_38003389/article/details/90696337
+https://blog.csdn.net/weixin_38003389/article/details/90717879
