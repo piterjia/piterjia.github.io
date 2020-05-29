@@ -15,18 +15,18 @@ keywords: mysql, distributed, Transaction,
 # MySQL主从同步配置
 
 ## 1.编辑MySQL主上的/etc/my.cnf，
-
+```
 log-bin=imooc_mysql
 server-id=1
 log-bin ：MySQL的bin-log的名字
 server-id : MySQL实例中全局唯一，并且大于0。
-
+```
 
 ## 2.编辑MySQL从上的/etc/my.cnf，
-
+```
 server-id=2
 server-id : MySQL实例中全局唯一，并且大于0。与主上的 server-id 区分开。
-
+```
 
 ## 3.在MySQL主上创建用于备份账号
 
@@ -70,13 +70,13 @@ mysql> CHANGE MASTER TO
 	-> MASTER_LOG_FILE='recorded_log_file_name',			   
     -> MASTER_LOG_POS=recorded_log_position;
 ```
-master_host_name : MySQL主的地址
-port_num : MySQL主的端口（数字型）
-replication_user_name : 备份账户的用户名
-replication_password : 备份账户的密码
-recorded_log_file_name ：bin-log的文件名
-recorded_log_position : bin-log的位置（数字型）
-bin-log的文件名和位置 是 步骤5中的show master status 得到的。
+- master_host_name : MySQL主的地址
+- port_num : MySQL主的端口（数字型）
+- replication_user_name : 备份账户的用户名
+- replication_password : 备份账户的密码
+- recorded_log_file_name ：bin-log的文件名
+- recorded_log_position : bin-log的位置（数字型）
+- bin-log的文件名和位置 是 步骤5中的show master status 得到的。
 
 
 ## 10.MySQL从上开启同步
