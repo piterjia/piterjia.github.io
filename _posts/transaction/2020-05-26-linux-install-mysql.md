@@ -171,7 +171,7 @@ wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 设置密码的方法
 ```
 #mysql -uroot
-mysql> set password for ‘root’@‘localhost’ = password('mypasswd');
+mysql> set password for 'root'@'localhost' = password('123456');
 mysql> exit
 ```
 
