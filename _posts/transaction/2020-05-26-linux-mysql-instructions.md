@@ -67,7 +67,7 @@ mysql -u root mysql
 
 ### 1.6.4 输入修改root密码SQL语句：
 ```
-update user set Password=password ('123456') where user='root'; 
+update user set Password=password('123456') where user='root'; 
 ```
 
 ### 1.6.5 输入数据刷新命令：
@@ -153,6 +153,8 @@ set global general_log = off; // 关闭
 
 ### 1.11.2 参考文档:
 http://blog.csdn.net/fdipzone/article/details/16995303
+https://juejin.im/post/5dd7582be51d4523060733fc
+
 
 # 2 centos7安装mysql
 
@@ -174,5 +176,3 @@ wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 mysql> set password for 'root'@'localhost' = password('123456');
 mysql> exit
 ```
-
-
