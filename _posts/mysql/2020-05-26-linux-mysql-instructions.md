@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux Mysql 部分指令
-categories: Transaction
+categories: Mysql
 description: Linux Mysql 安装和使用指令
 keywords: mysql, distributed, Linux
 ---

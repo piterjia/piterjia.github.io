@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux 安装 Mysql
-categories: Transaction
+categories: Mysql
 description: Linux 安装 Mysql教程
 keywords: mysql, distributed, Linux
 ---
