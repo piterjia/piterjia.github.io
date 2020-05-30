@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Linux 安装 Mysql
+title: Linux Mysql 部分指令
 categories: Transaction
-description: Linux 安装 Mysql教程
+description: Linux Mysql 安装和使用指令
 keywords: mysql, distributed, Linux
 ---
 
-Linux 下安装 Mysql教程简易教程
+Linux Mysql 安装和使用的部分指令记录
 
 # 1 安装MySQL
 ## 1.1 查询是否安装了mysql
