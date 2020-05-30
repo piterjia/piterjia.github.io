@@ -34,21 +34,22 @@ mysql-8.0.20-linux-glibc2.12-x86_64.tar.xz
 mysql-8.0.20-linux-glibc2.12-x86_64
 ```
 
-解压完成后，可以在当前目录下多了个加压文件，移动文件到/usr/local/mysql 执行移动命令
+解压完成后，可以看到当前目录下多了个解压文件，移动文件到/usr/local/mysql 执行移动命令
 ```
 > mv mysql-8.0.20-linux-glibc2.12-x86_64 /usr/local/mysql
 ```
 
-## 2、Next, create a symbolic link to the installation directory created by tar
-接下来，创建到安装目录的软连接
+## 2、接下来，创建到安装目录的软连接
 
 ```
 > ln -s /usr/local/mysql/bin/mysql /usr/bin/mysql
 ```
 
-或者
+或者：
+ln命令生成指向安装目录的符号链接。这使您可以更容易地将其称为/usr/local/mysql。
 
-ln命令生成指向安装目录的符号链接。这使您可以更容易地将其称为/usr/local/mysql。为了避免在使用MySQL时总是需要键入客户端程序的路径名，可以将/usr/local/MySQL/bin目录添加到path变量中：
+为了避免在使用MySQL时总是需要键入客户端程序的路径名，可以将/usr/local/MySQL/bin目录添加到path变量中：
+
 ```
 > export PATH=$PATH:/usr/local/mysql/bin
 ```
