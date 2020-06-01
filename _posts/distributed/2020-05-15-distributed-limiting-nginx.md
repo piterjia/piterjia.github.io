@@ -51,8 +51,8 @@ Context:	http, server, location
 ```
 
 Nginx 限制IP的连接和并发分别有两个模块：
-limit_req_zone 用来限制单位时间内的请求数，即速率限制,采用的漏桶算法 "leaky bucket"。
-limit_req_conn 用来限制同一时间连接数，即并发限制。
+- limit_req_zone 用来限制单位时间内的请求数，即速率限制,采用的漏桶算法 "leaky bucket"。
+- limit_req_conn 用来限制同一时间连接数，即并发限制。
 
 #### 参数说明
 ```
@@ -207,7 +207,7 @@ limit_conn_zone $server_name zone=perserver:20m;
             limit_conn_status 504;
         }
 
-        # 彩蛋
+
         location /download/ {
             limit_rate_after 100m;
             limit_rate 256k;
