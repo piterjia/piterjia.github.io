@@ -12,10 +12,15 @@ Spring Cloud 就是微服务系统架构的一站式解决方案，在平时我�
 
 Spring Cloud 的版本号并不是我们通常见的数字版本号，而是以字母表的顺序来对应不同的版本，比如：最早 的 Release 版本 Angel，第二个 Release 版本 Brixton，然后是 Camden、 Dalston、Edgware、Finchley、Greenwich、Hoxton。
 
+
+
+
 ## Spring Cloud的全景图
 我们先来看一幅Spring Cloud的全景图，然后再详细解释其中的每个组件的功能。
 
 ![](/images/microservice/microserviceintroduce.png)
+
+
 
 
 ## 服务发现与治理框架——Eureka
@@ -39,6 +44,7 @@ Spring Cloud提供了三款服务治理的组件，分别是 Eureka, Consul 和 
 那么现在，我们的模式就是这样的了。
 ![](/images/microservice/房源中介.png)
 
+
 ### 例子扩展
 但是，这个时候还会出现一些问题。
 - 房东注册之后如果不想卖房子了怎么办？我们是不是需要让房东定期续约？如果房东不进行续约是不是要将他们从中介那里的注册列表中移除？
@@ -47,6 +53,7 @@ Spring Cloud提供了三款服务治理的组件，分别是 Eureka, Consul 和 
   
 针对上面的问题我们来重新构建一下上面的模式图
 ![](/images/microservice/房源中介2.jpg)
+
 
 
 ### Eureka 基础概念介绍
@@ -116,6 +123,7 @@ Spring Cloud提供了三款服务治理的组件，分别是 Eureka, Consul 和 
 
 
 
+
 ## 负载均衡
 Ribbon是Spring Cloud中负责负载均衡的组件，Ribbon的一大优势是它能够和各个Spring Cloud组件无缝集成，而且十分灵巧轻便又具备高可扩展性。
 
@@ -138,6 +146,7 @@ public boolean judge(@RequestBody Request request) {
     return restTemplate.postForObject(url, request, Boolean.class);
 }
 ```
+
 ### 为什么需要 Ribbon？
 
 Ribbon 是 Netflix 公司的一个开源的负载均衡项目，是**一个客户端/进程内负载均衡器，运行在消费者端。**
@@ -152,6 +161,7 @@ Ribbon 是 Netflix 公司的一个开源的负载均衡项目，是**一个客�
 ![](/images/microservice/秒杀系统-ribbon2.jpg)
 
 其工作原理就是 Consumer 端获取到了所有的服务列表之后，在其内部使用负载均衡算法，再展开对多个系统调用。
+
 
 ### Nginx 和 Ribbon 的对比
 提到 **负载均衡** 就不得不提到大名鼎鼎的 Nignx 了，而和 Ribbon 不同的是，它是一种集中式的负载均衡器。
@@ -256,6 +266,8 @@ Hystrix 是目前 Spring Cloud 中应用最广泛的服务容错组件.
 
 
 
+
+
 ## 分布式配置中心和消息推送组件
 Spring Cloud 借助 Config 组件来集中管理集群中所有服务节点的配置，它是一个中心化的配置管理中心，将你的微服务从繁重的配置工作中解脱出来。利用 Config 组件我们可以轻松玩转环境隔离、配置推送和配置项动态刷新。
 
@@ -278,6 +290,9 @@ Spring Cloud 借助 Config 组件来集中管理集群中所有服务节点的�
 
 如图所示。
 ![](/images/microservice/springcloud-bus-s213dsfsd.jpg)
+
+
+
 
 
 
@@ -318,16 +333,30 @@ Zuul 的过滤器的功能还可以实现 权限校验，灰度发布、限流�
 
 
 
+
+
+
 ## 调用链路追踪
 微服务的一大特点就是完成一个业务场景所需要调用的上下游链路非常长，比如说一个下单操作，后台就要调用商品、订单、营销优惠、履约、消息推送、支付等等一大家子微服务，任何一个环节出错可能都会导致下单失败。
 
 Sleuth 是 Spring Cloud 提供的调用链路追踪组件，它进行线上问题排查必不可少的关键环节，单就 Sleuth 来说，它就是在一整条调用链路中打上某个标记，将一个 api 请求所调用的所有上下游链路串联起来。如果从宏观的角度来说，调用链追踪还涉及到日志打标、调用链分析、日志收集、构建搜索 Index 等等流程。
 
+
+
+
+
 ## 消息驱动
 Kafka 和 RabbitMQ 是目前应用最广泛的消息中间件，很多异步调用场景底层都依赖于消息组件，比如说电商场景中的商品批量发布，或者下单成功后的邮件通知系统等等。Stream 是Spring Cloud 为我们提供的消息驱动组件，它代理了业务层和底层的物理中间件的交互，至于底层中间件是 Kafka 还是 RabbitMQ ，对业务层几乎是无感知的。借助Stream我们不仅可以轻松实现组内单播和广播场景，同时Stream还提供了对异常处理的丰富支持。
 
+
+
+
+
 ## 防流量卫兵
 Sentinel 是阿里巴巴开源的一款主打“流量控制”的组件，与Spring Cloud、Dubbo、甚至 GRPC 都可以很好的集成，在分布式流量控制（包括秒杀场景的突发流量场景）、熔断、消息驱动下的削峰填谷等各个场景下都有稳定发挥。
+
+
+
 
 
 
