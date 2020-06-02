@@ -63,7 +63,7 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
 ## 致谢
 
-本博客外观基于 [mzlogin](mzlogin.github.io) 修改，感谢！
+本博客外观基于 [mzlogin](https://mazhuang.org/) 修改，感谢！
 
 Thanks for JetBrains' support.
 
