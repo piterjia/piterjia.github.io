@@ -8,7 +8,7 @@ menu: 链接
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
+> 常用网址
 
 <ul>
 {% for link in site.data.links %}

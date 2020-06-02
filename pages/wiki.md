@@ -8,7 +8,7 @@ menu: 维基
 permalink: /wiki/
 ---
 
-> 记多少快捷键和命令，会让脑袋爆炸呢？
+> 聪明在于学习,天才在于积累。
 
 <ul class="listing">
 {% for wiki in site.wiki %}
