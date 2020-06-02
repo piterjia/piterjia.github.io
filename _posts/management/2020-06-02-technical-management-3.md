@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【技术管理成长之路】三、我认知的技术管理风格
+title: 【技术管理成长之路】我认知的技术管理风格
 categories: 技术管理
 description: 我认知的技术管理风格
 keywords: technical, management, 技术管理, 管理
