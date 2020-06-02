@@ -8,20 +8,22 @@
       - Design Patterns
       - Spring
       - Spring Boot
+      - C
 
 
 - name: Mobile Developer Keywords
   keywords:
       - Android
       - iOS
-      - 小程序
+      - Mini Program
+      - Web
 
 - name: Others
   keywords:
       - 技术管理
+      - 微服务
       - 数据库
       - 中间件
       - 分布式
       - 高并发
-      - 前端
       

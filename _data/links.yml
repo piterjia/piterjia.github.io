@@ -1,33 +1,37 @@
-- name: Connie 酱
-  url: https://connie99.github.io
+- name: 开发者头条
+  url: https://toutiao.io/
   src: life
 
-- name: 只宁静不致远
-  url: http://zxning.github.io
+- name: w3cschool
+  url: https://www.w3cschool.cn/
   src: life
 
-- name: Blog Something
-  url: http://chenxiaoyoyo.github.io
+- name: 极客时间
+  url: https://time.geekbang.org/
   src: life
 
-- name: 日新亭
-  url: http://www.fengerzh.com/
+- name: androidweekly
+  url: https://www.androidweekly.io/
   src: life
 
-- name: 叮咚购
-  url: http://www.ringwang.com/
+- name: 在线代码格式化
+  url: https://tool.oschina.net/codeformat/html
   src: life
 
-- name: wanandroid
-  url: http://www.wanandroid.com/
+- name: json 格式化
+  url: https://www.json.cn/
   src: life
 
-- name: 求生之路
-  url: http://blog.xiaolaoni.xin/
+- name: 少数派
+  url: https://sspai.com/
   src: life
 
-- name: 水寒的博客
-  url: https://dp2px.com
+- name: 500px
+  url: https://web.500px.com/
+  src: life
+
+- name: 有次博客
+  url: http://you.ci/
   src: www
 
 - name: 孙不服的博客
@@ -38,14 +42,18 @@
   url: http://www.codeinfo.top
   src: www
 
+- name: 呓城之城
+  url: http://yicheng.zdyrs.com/
+  src: www
+  
+- name: 水寒的博客
+  url: https://dp2px.com
+  src: www
+
 - name: HwiLu's 博客
   url: https://hwilu.github.io/
   src: www
 
-- name: 有次博客
-  url: http://you.ci/
-  src: www
 
-- name: 呓城之城
-  url: http://yicheng.zdyrs.com/
-  src: www
+
+
