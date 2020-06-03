@@ -16,7 +16,7 @@ keywords: Redis, Lua, distributed, limiting
 
 如果设置的时间粒度越细, 那么限流会更平滑.
 
-## 计数器模式 Lua 脚本
+### 计数器模式 Lua 脚本
 ```
 -- 计数器限流
 -- 此处支持的最小单位时间是秒, 若将 expire 改成 pexpire 则可支持毫秒粒度.
