@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Eureka 集群介绍与示例
+title: 搭建 Eureka 高可用服务注册中心集群
 categories: 微服务
-description: Eureka 集群
+description: 搭建 Eureka 高可用服务注册中心集群
 keywords: Eureka, spring Cloud, distributed, micro service
 ---
 
