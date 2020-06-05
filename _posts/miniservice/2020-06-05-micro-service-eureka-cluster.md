@@ -77,11 +77,12 @@ eureka:
 
 那么我们如何去搭建一个 Eureka 集群呢？假设现在有三个 Eureka 服务： eureka01 、 eureka02 和  eureka03。
 
-为了体现出集群的你中有我，我中有你，不难想象， eureka01 中应该挂上 eureka02 和 eureka03 ； eureka02 中应该挂上 eureka01 和 eureka03 ； eureka03 中应该挂上 eureka01 和 eureka02。如下图所示：
+为了体现出集群的你中有我，我中有你，不难想象， eureka01 中应该挂上 eureka02 和 eureka03 ； eureka02 中应该挂上 eureka01 和 eureka03 ； eureka03 中应该挂上 eureka01 和 eureka02。它们三者之间互为备份。如下图所示：
 
-待添加插图
+![](/images/microservice/eureka-cluster-5.png)
 
-那么如何实现呢？
+那么代码层面，如何实现呢？
+
 
 ### Eureka01 的改造
 
@@ -120,6 +121,7 @@ serviceUrl:
 ```
 
 OK，defaultZone 配置好了 eureka02 和 eureka03。
+
 
 ### 搭建 Eureka02
 
