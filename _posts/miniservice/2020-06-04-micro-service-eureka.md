@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Eureka 单中心方案示例
+title: 搭建 Eureka 单节点注册中心
 categories: 微服务
 description: Eureka 使用简介与单中心示例
 keywords: Eureka, spring Cloud, distributed, micro service
