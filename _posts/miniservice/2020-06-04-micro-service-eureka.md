@@ -24,6 +24,7 @@ Eureka 是 spring cloud 中的一个负责服务注册与发现的组件。遵�
 spring cloud 基于 spring boot 进行开发，因此我们需要创建一个 spring boot 项目，同时在里面新建三个子 module，分别是：eurekaserver、eurekaprovider、eurekaconsumer。
 
 项目结构如下：
+
 ![](/images/microservice/eureka-demo-1.png)
 
 ### POM 配置
@@ -71,7 +72,7 @@ spring cloud 基于 spring boot 进行开发，因此我们需要创建一个 sp
 此章节我们开发一个 Eureka server，该 eureka server 作为注册中心，同步保留所有的服务信息。
 
 ### server pom 配置
-pom.xml中添加如下的配置信息
+在子module eurekaserver 中的 pom.xml里添加如下的配置信息
 ```
     <artifactId>eurekaserver</artifactId>
     <name>eureka-server</name>
