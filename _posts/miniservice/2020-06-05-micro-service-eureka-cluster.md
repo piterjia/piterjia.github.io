@@ -44,7 +44,7 @@ spring cloud 基于 spring boot 进行开发，因此我们需要创建一个 sp
 
 ## 搭建 Eureka 集群
 
-在搭建 Eureka 集群之前，先来回顾一下前面搭建的单个 Eureka 服务，看下 yml 配置文件：
+在搭建 Eureka 集群之前，先来回顾一下前面搭建的单个 Eureka 服务，[单节点 Eureka](https://piterjia.github.io/2020/06/04/micro-service-eureka/)。看下 yml 配置文件：
 ```
 spring:
   application:
@@ -200,7 +200,8 @@ eureka:
 
 
 ## eureka provider 修改
-这一个 eureka client 的职责是：向服务端发起服务注册，他作为服务提供者对外提供服务。
+
+这个 provider 前一篇文章  [单节点 Eureka](https://piterjia.github.io/2020/06/04/micro-service-eureka/) 已经详细介绍过他的职责和作用。简单概述：该 eureka client 的职责是：向服务端发起服务注册，他作为服务提供者对外提供服务。
 
 ### 修改配置信息
 之前的配资配置信息如下：
@@ -236,7 +237,7 @@ eureka.client.service-url.defaultZone=http://eureka01:20000/eureka/,http://eurek
 
 ## eureka consumer 修改
 
-这一个 eureka client 的职责是：向服务端发起服务注册，他作为服务消费者者，对 provider 进行远程调用。
+这一个 eureka client 的职责是：向服务端发起服务注册，他作为服务消费者者，对 provider 进行远程调用。详见  [单节点 Eureka](https://piterjia.github.io/2020/06/04/micro-service-eureka/) 
 
 ### 修改配置信息
 之前的配资配置信息如下：
@@ -272,8 +273,7 @@ eureka.client.service-url.defaultZone=http://eureka01:20000/eureka/,http://eurek
 
 
 ### consumer远程调用
-
-浏览器直接调用，或者使用postman等调试工具：
+至此，所有的准备工作已经做完了。浏览器直接调用，或者使用postman等调试工具，发起远程调用：
 ```
 http://localhost:10002/hi
 ```
