@@ -10,6 +10,9 @@ keywords: Ribbon, spring Cloud, distributed, micro service
 
 
 ## 1. pom 配置
+
+导入eureka-client、ribbon、web 等相关的包。
+
 ```
     <dependencies>
         <dependency>
@@ -35,6 +38,9 @@ keywords: Ribbon, spring Cloud, distributed, micro service
 ```
 
 ## 2. application.properties 配置
+
+通过配置文件的方式来为 Ribbon 指定对应的配置：
+
 ```
 spring.application.name=ribbon-consumer
 
@@ -43,6 +49,15 @@ server.port=31000
 eureka.client.serviceUrl.defaultZone=http://localhost:20000/eureka/
 # 采用配置文件方式，进行ribbon 负载均衡的方式
 eureka-client.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RoundRobinRule
+```
+
+Ribbon 相关的配置主要包括以下几点，需要的时候可以补充
+```
+<clientName>.ribbon.NFLoadBalancerClassName: Should implement ILoadBalancer(负载均衡器操作接口)
+<clientName>.ribbon.NFLoadBalancerRuleClassName: Should implement IRule(负载均衡算法)
+<clientName>.ribbon.NFLoadBalancerPingClassName: Should implement IPing(服务可用性检查)
+<clientName>.ribbon.NIWSServerListClassName: Should implement ServerList(服务列表获取)
+<clientName>.ribbon.NIWSServerListFilterClassName: Should implement ServerList­Filter(服务列表的过滤)
 ```
 
 ## 3. 启动类：Ribbon Consumer Application 
@@ -66,6 +81,8 @@ public class RibbonConsumerApplication {
 
 }
 ```
+
+注意：需要在 RestTemplate 上面，添加 LoadBalanced 注解，指名这个需要 ribbon 来实现负载均衡。
 
 ## 4. 新建配置文件
 通过代码或者配置文件（ application.properties ）配置负载均衡二选一即可
