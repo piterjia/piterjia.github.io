@@ -12,7 +12,7 @@ Feign 是声明式的 web service 客户端，它让微服务之间的调用变�
 # 编写 Feign 案例
 
 ## 创建注册中心
-关注注册中心如何创建，大家参考之前的这两篇文章
+关于注册中心如何创建，大家参考之前的这两篇文章
 
 [搭建 Eureka 单节点注册中心]( https://piterjia.github.io/2020/06/04/micro-service-eureka/)
 
