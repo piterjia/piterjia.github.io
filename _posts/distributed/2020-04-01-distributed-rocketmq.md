@@ -1,8 +1,8 @@
 ---
 layout: post
-title: RocketMQ 简介以及生产级消息集群搭建
+title: RocketMQ 简介以及集群模式
 categories: Distributed
-description: RocketMQ 简介以及生产级消息集群搭建
+description: RocketMQ 简介以及集群模式
 keywords: RocketMQ, distributed 
 ---
 以 RocketMQ 的事务消息功能为示例，总结分布式事务的内容。并介绍如何搭建一套生产级的RocketMQ消息集群。
