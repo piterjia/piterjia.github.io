@@ -247,4 +247,9 @@ Ribbon重试次数(包含首次)=1+ribbon.MaxAutoRetries+ribbon.MaxAutoRetriesNe
 以上超时配置的值只是示范，大家根据实际情况设置即可！
 
 
+参考资料：
+https://github.com/Netflix/Hystrix/wiki/Configuration
+https://www.cnblogs.com/throwable/p/11961016.html
+
+
 
