@@ -148,15 +148,12 @@ public class HystrixFallbackApplication {
         new SpringApplicationBuilder(HystrixFallbackApplication.class)
                 .web(WebApplicationType.SERVLET)
                 .run(args);
-
-//        System.out.println(Feign.configKey(MyService.class,
-//                MyService.class.getMethod("retry", int.class)));
     }
 
 }
 ```
 
-注意启动类上上面的注解:
+注意启动类上面的注解:
 - EnableDiscoveryClient         启动服务发现，将自己注册到服务注册中心。
 - SpringBootApplication         spring boot 应用必须的注解
 - EnableFeignClients            使能 feign
@@ -249,7 +246,7 @@ public class Controller {
 ```
 
 简单介绍下以下两个:
-- actuator： 这个包是用来做服务监控的，很多监控相关的功能都会用到这个包，具体的内容我这里先不讲，后面会专门有一篇来讲这个。
+- actuator： 这个包是用来做服务监控的，很多监控相关的功能都会用到这个包。
 - hystrix-dashboard： 这个是今天的主角，hystrix-dashboard帮我们封装好了hystrix的监控面板。
 
 
@@ -398,13 +395,15 @@ public class TurbineApplication {
 
 ## 联调
 
-现在依次启动注册中心，provider，consumer，Turbine 以及 Dashboard 子项目，访问消费者 consumer 子项目，并访问 http://localhost:52000/turbine.stream
+现在依次启动注册中心 eureka，provider，consumer，Turbine 以及 Dashboard 子项目，访问消费者 consumer 子项目对应的controller 中的方法，然后访问turbine.stream路径： http://localhost:52000/turbine.stream
 
-会返回和上面直接使用 Dashboard 时一样的信息。该页面随着用户的不断刷新，将获取实时的监控数据，说明和单个的监控类似，返回了监控聚合项目的信息。
+我们会发现，返回的数据和上面直接使用 Dashboard 时是一样的。该页面随着用户的请求，不断刷新，显示实时的监控数据。至此，说明和单个的监控类似，成功返回了监控聚合项目的信息。
 
 ![](/images/microservice/hystrix-dash-5.png)
 
 
-至此，我们已经介绍完毕如何通过 Hystrix  Dashboard 监测单独服务的 Hystrix Command 请求响应时间, 请求成功率等数据。
+## 总结
 
-然后我们又在在Hystrix stream的基础上设置Turbine以获得聚合视图。
+通过本文，我们介绍了如何通过 Hystrix  Dashboard 监测单独服务的 Hystrix Command 请求响应时间, 请求成功率等数据。
+
+然后我们又在在 Hystrix stream 的基础上通过设置 Turbine 以获得聚合数据与视图。
