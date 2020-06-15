@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【技术管理成长之路】四、技术管理都是做哪些事情？
+title: 【技术管理成长之路】五、技术管理都是做哪些事情？
 categories: 技术管理
 description: 技术管理都是做哪些事情
 keywords: technical, management, 技术管理, 管理
