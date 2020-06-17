@@ -9,15 +9,20 @@ keywords: linux, redis
 
 ## 安装：
 
-1. 获取redis资源
+### 1. 获取redis资源
+
 ```
 wget http://download.redis.io/releases/redis-5.0.8.tar.gz
 ```
-2. 解压
+
+### 2. 解压
+
 ```
 tar xzvf redis-5.0.8.tar.gz
 ```
-3. 安装
+
+### 3. 安装
+
 ```
 cd redis-5.0.8
 
@@ -27,7 +32,8 @@ cd src
 
 make install PREFIX=/usr/local/redis
 ```
-4. 移动配置文件到安装目录下
+
+### 4. 移动配置文件到安装目录下
 ```
 cd ../
 
@@ -35,13 +41,13 @@ mkdir /usr/local/redis/etc
 
 mv redis.conf /usr/local/redis/etc
 ```
- 5. 配置redis为后台启动
- 6. 
+### 5. 配置redis为后台启动
+
 ```
 vi /usr/local/redis/etc/redis.conf //将daemonize no 改成daemonize yes
 ```
 
-6. 将redis加入到开机启动
+### 6. 将redis加入到开机启动
 
 ```
 vi /etc/rc.local 
@@ -52,26 +58,26 @@ vi /etc/rc.local
 /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 
 ```
 
-7. 开启redis
+### 7. 开启redis
 
 ```
 /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 
 ```
  
-8. 将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用
+### 8. 将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用
 
 ```
 cp /usr/local/redis/bin/redis-server /usr/local/bin/
 cp /usr/local/redis/bin/redis-cli /usr/local/bin/
 ```
 
-9. 设置redis密码
+### 9. 设置redis密码
 
 找到redis的配置文件— redis.conf 文件，然后修改里面的 requirepass，这个本来是注释起来了的，将注释去掉，并将后面对应的字段设置成自己想要的密码，保存退出。
 
 重启redis服务，即可。
 
-10. 让外网能够访问redis
+### 10. 让外网能够访问redis
 
 切换到root用户 打开iptables的配置文件：
 
