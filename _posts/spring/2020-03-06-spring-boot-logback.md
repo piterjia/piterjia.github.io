@@ -177,25 +177,25 @@ pattern 用于定义日志的输出格式，通过 Logback 中的转换说明符
 
 ##### pattern之 日期、时间
 假设系统时间是 2006-10-20 14:06:49,812
-![](/images/posts/spring/logback-appender1.png){:height="100" width="100"}
+
+![](/images/posts/spring/logback-appender1.png)
 
 ##### pattern 之 日志记录器
-![](/images/posts/spring/logback-appender2.png){:height="100" width="100"}
+![](/images/posts/spring/logback-appender2.png)
 
 ##### pattern 之 类名、方法名、行号
-![](/images/posts/spring/logback-appender3.png){:height="100" width="100"}
+![](/images/posts/spring/logback-appender3.png)
 
 ##### pattern 之 日志信息
-![](/images/posts/spring/logback-appender4.png){:height="100" width="100"}
+![](/images/posts/spring/logback-appender4.png)
 
 ##### pattern 之 换行
-![](/images/posts/spring/logback-appender5.png){:height="100" width="100"}
-
+![](/images/posts/spring/logback-appender5.png)
 ##### pattern 之 消息请求级别
-![](/images/posts/spring/logback-appender6.png){:height="100" width="100"}
+![](/images/posts/spring/logback-appender6.png)
 
 ##### pattern 之 线程
-![](/images/posts/spring/logback-appender7.png){:height="100" width="100"}
+![](/images/posts/spring/logback-appender7.png)
 
 
 ```
