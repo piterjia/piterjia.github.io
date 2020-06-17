@@ -196,6 +196,9 @@ mybatis.mapper-locations=classpath:mapper/*.xml
 检查是否可以正常操作数据库
 
 
+## 源码地址
+[springboot-mybatis-demo](https://github.com/piterjia/springboot-mybatis-demo)
+
 
 
 ## 参考：
