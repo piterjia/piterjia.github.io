@@ -100,6 +100,19 @@ Logback 会按照以下顺序查找配置文件
 </configuration>
 ```
 
+## 简单配置方案
+
+如果只是进行简单的配置，使用 application.properties 配置文件就够了
+```
+# 当前活动的日志文件名
+# logging.file.name=logs/app1/app.log
+# 最多保留多少天的日志
+# logging.file.max-history=30
+# 单个日志文件最大容量
+# logging.file.max-size=10MB
+# dao 层设置成 debug 级别以显示sql
+logging.level.com.wqlm.boot.user.dao=debug
+```
 
 ## 样例代码
 
