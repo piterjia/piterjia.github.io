@@ -36,24 +36,30 @@ mkdir /usr/local/redis/etc
 mv redis.conf /usr/local/redis/etc
 ```
  5. 配置redis为后台启动
+ 6. 
 ```
 vi /usr/local/redis/etc/redis.conf //将daemonize no 改成daemonize yes
 ```
+
 6. 将redis加入到开机启动
+
 ```
 vi /etc/rc.local 
 ```
+
 在里面添加内容：
 ```
 /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 
 ```
 
-7.开启redis
+7. 开启redis
+
 ```
 /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 
 ```
  
-8.将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用
+8. 将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用
+
 ```
 cp /usr/local/redis/bin/redis-server /usr/local/bin/
 cp /usr/local/redis/bin/redis-cli /usr/local/bin/
@@ -68,6 +74,7 @@ cp /usr/local/redis/bin/redis-cli /usr/local/bin/
 10. 让外网能够访问redis
 
 切换到root用户 打开iptables的配置文件：
+
 ```
 vi /etc/sysconfig/iptables
 ```
