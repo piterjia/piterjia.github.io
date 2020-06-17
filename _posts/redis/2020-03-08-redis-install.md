@@ -11,7 +11,7 @@ keywords: linux, redis
 
 1. 获取redis资源
 ```
-　　wget http://download.redis.io/releases/redis-5.0.8.tar.gz
+wget http://download.redis.io/releases/redis-5.0.8.tar.gz
 ```
 2. 解压
 ```
