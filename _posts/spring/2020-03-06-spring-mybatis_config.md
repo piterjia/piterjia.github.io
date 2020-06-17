@@ -114,7 +114,7 @@ Logback 支持“热加载” ，即在项目运行过程中更改了配置会�
 当你开启“热加载”后，Logback 会在后台启动一个 ReconfigureOnChangeTask 的 task，此 task 在单独的线程中运行，并按照设置的频率，检查您的配置文件是否已更改
 
 
-### 变量 —— <property>
+### 变量 property
 
 #### 1、自定义变量
 <configuration> 下，可以通过 <property> 来定义一个变量，属性 name 是变量的名称，属性 value 是变量的值
