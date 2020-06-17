@@ -71,9 +71,9 @@ configuration 节点示例：
 </configuration>
 ```
 
-#### 1、如果你觉得 Logback 有问题，可以开启 Logback 诊断功能。
+#### 开启 Logback 诊断功能
 
-开启方法以 xml 配置为例：
+如果你觉得 Logback 有问题，可以开启 Logback 诊断功能。开启方法以 xml 配置为例：
 
 ```
 <configuration debug="true">
@@ -90,7 +90,7 @@ configuration 节点示例：
 </configuration>
 ```
 
-#### 2、修改后自动重新加载配置文件("热加载")
+#### 修改后自动重新加载配置文件
 
 Logback 支持“热加载” ，即在项目运行过程中更改了配置会自动重新加载
 
@@ -116,7 +116,7 @@ Logback 支持“热加载” ，即在项目运行过程中更改了配置会�
 
 ### 变量 property
 
-#### 1、自定义变量
+#### 自定义变量
 <configuration> 下，可以通过 <property> 来定义一个变量，属性 name 是变量的名称，属性 value 是变量的值
 
 ```
@@ -126,7 +126,7 @@ Logback 支持“热加载” ，即在项目运行过程中更改了配置会�
 </configuration>
 ```
 
-#### 2、使用自定义变量
+#### 使用自定义变量
 
 通过 ${变量名} 来引用变量
 ```
@@ -143,7 +143,7 @@ Logback 支持“热加载” ，即在项目运行过程中更改了配置会�
 ```
 
 
-### 日志输出器 —— <appender>
+### 日志输出器 appender
 
 <appender> (日志输出器)，用于将日志按照一定的格式输出到控制台、文件、数据库等地方，logger(日志记录器) 需要使用 appender(日志输出器) 将记录器中的日志输出！
 
@@ -157,7 +157,7 @@ appender 有两个必填属性：
 
 下面我们一一介绍下 <appender> 的子节点
 
-#### 编码器 —— <encoder>
+#### 编码器 encoder
 
 <encoder> 负责将事件(日志)转换为字节数组，并将该字节数组写出为 OutputStream。
 <encoder> 是 <appender> 的子节点，在 <encoder> 节点中，最重要的是配置 <pattern> ，它是用来格式化日志输出格式，
@@ -230,7 +230,7 @@ appender 有两个必填属性：
 
 使用方法是用颜色的代码把消息包起来，比如想将日志级别设置成红色 %red(%-5level)
 
-#### 2、 encoder 的子节点 charset
+#### encoder 的子节点 charset
 
 <charset> 是 <encoder> 的子节点，用于设置输出字符集
 
