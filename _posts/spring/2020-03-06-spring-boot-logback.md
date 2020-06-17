@@ -117,7 +117,7 @@ Logback 支持“热加载” ，即在项目运行过程中更改了配置会�
 ### 变量 property
 
 #### 自定义变量
-<configuration> 下，可以通过 <property> 来定义一个变量，属性 name 是变量的名称，属性 value 是变量的值
+configuration 下，可以通过 property 来定义一个变量，属性 name 是变量的名称，属性 value 是变量的值
 
 ```
 <configuration>
@@ -145,7 +145,7 @@ Logback 支持“热加载” ，即在项目运行过程中更改了配置会�
 
 ### 日志输出器 appender
 
-<appender> (日志输出器)，用于将日志按照一定的格式输出到控制台、文件、数据库等地方，logger(日志记录器) 需要使用 appender(日志输出器) 将记录器中的日志输出！
+appender (日志输出器)，用于将日志按照一定的格式输出到控制台、文件、数据库等地方，logger(日志记录器) 需要使用 appender(日志输出器) 将记录器中的日志输出！
 
 ![](/images/posts/spring/logback-appender.png)
 
@@ -155,12 +155,12 @@ appender 有两个必填属性：
    - ch.qos.logback.core.ConsoleAppender ：将日志输出到控制台的 appender
    - ch.qos.logback.core.rolling.RollingFileAppender ：将日志输出到文件，并按照条件切换输出到新建文件(滚动输出，自动切割)
 
-下面我们一一介绍下 <appender> 的子节点
+下面我们一一介绍下 appender 的子节点
 
 #### 编码器 encoder
 
-<encoder> 负责将事件(日志)转换为字节数组，并将该字节数组写出为 OutputStream。
-<encoder> 是 <appender> 的子节点，在 <encoder> 节点中，最重要的是配置 <pattern> ，它是用来格式化日志输出格式，
+encoder 负责将事件(日志)转换为字节数组，并将该字节数组写出为 OutputStream。
+encoder 是 appender 的子节点，在 encoder 节点中，最重要的是配置 pattern ，它是用来格式化日志输出格式，
 
 ```
 <appender name="" class="">
@@ -172,7 +172,7 @@ appender 有两个必填属性：
 ```
 
 #### 1、 encoder 的子节点 pattern
-<pattern>  用于定义日志的输出格式，通过 Logback 中的转换说明符(Conversion specifier)（其实就是一些预定义变量），可以方便的组合出我们想要的日志格式
+pattern 用于定义日志的输出格式，通过 Logback 中的转换说明符(Conversion specifier)（其实就是一些预定义变量），可以方便的组合出我们想要的日志格式
 在这里列举出常用的转换说明符(Conversion specifier)，更多请参考官方文档
 
 ##### pattern之 日期、时间
@@ -232,7 +232,7 @@ appender 有两个必填属性：
 
 #### encoder 的子节点 charset
 
-<charset> 是 <encoder> 的子节点，用于设置输出字符集
+charset 是 encoder 的子节点，用于设置输出字符集
 
 ```
 <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -247,7 +247,7 @@ appender 有两个必填属性：
 
 ch.qos.logback.core.ConsoleAppender 是 Logback 自带的 appender，用于将日志输出到控制台。
 
-对应控制台，只需要重点配置 <encoder> 节点
+对应控制台，只需要重点配置 encoder 节点
 
 ```
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
@@ -340,7 +340,7 @@ fileNamePattern 的值为日志文件的路径名，支持绝对和相对路径�
 
 TimeBasedRollingPolicy 支持自动文件压缩。如果 fileNamePattern 属性值以.gz 或.zip结尾，则启用此功能。
 
-情况1: <fileNamePattern>启动了压缩，但 appender 没有设置 <file>
+情况1: fileNamePattern 启动了压缩，但 appender 没有设置 file
 
 ```
 <appender name="RFA" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -353,10 +353,10 @@ TimeBasedRollingPolicy 支持自动文件压缩。如果 fileNamePattern 属性�
 </appender>
 ```
 
-由于没有设置 <file>，所以 logback 会根据 <fileNamePattern> 中内容生成一个叫 logs/logback/application_2019-12-31  的无后缀名的日志文件，并将当天日志写入该文件，到了第二天会将 logs/logback/application_2019-12-31 压缩成 logs/logback/application_2019-12-31.zip 并生成 logs/logback/application_2020-01-01 新日志文件
+由于没有设置 file，所以 logback 会根据 fileNamePattern 中内容生成一个叫 logs/logback/application_2019-12-31  的无后缀名的日志文件，并将当天日志写入该文件，到了第二天会将 logs/logback/application_2019-12-31 压缩成 logs/logback/application_2019-12-31.zip 并生成 logs/logback/application_2020-01-01 新日志文件
 
 
-情况2: <fileNamePattern>启动了压缩， appender 也设置了 <file>
+情况2: fileNamePattern启动了压缩， appender 也设置了 file
 
 ```
 <appender name="RFA" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -369,7 +369,7 @@ TimeBasedRollingPolicy 支持自动文件压缩。如果 fileNamePattern 属性�
 </appender>
 ```
 
-由于设置了 <file>，所以 logback 会将日志输出到 logs/logback/application.log ，到了第二天 logback 会根据 <fileNamePattern> 中的设置将 logs/logback/application.log 压缩成 logs/logback/application_2019-12-31.zip 并生成 logs/logback/application.log 新日志文件
+由于设置了 file，所以 logback 会将日志输出到 logs/logback/application.log ，到了第二天 logback 会根据 fileNamePattern 中的设置将 logs/logback/application.log 压缩成 logs/logback/application_2019-12-31.zip 并生成 logs/logback/application.log 新日志文件
 
 
 **触发滚动的时机**
@@ -452,7 +452,7 @@ maxFileSize 属性表示单个归档日志文件的大小，单位有 KB、MB、
 
 
 
-### 日志记录器 —— <logger>
+### 日志记录器 —— logger
 
 ```
 <logger name="" level="" additivity="" >
@@ -460,13 +460,13 @@ maxFileSize 属性表示单个归档日志文件的大小，单位有 KB、MB、
 </logger>
 ```
 
-<logger> 有三个属性:
+logger 有三个属性:
 
 - name : 包名或类名。即，将该记录器作用于哪个类或包下。必填
 - level : 该记录器的级别，低于该级别的日志消息不记录。可选级别从小到大为 TRACE、DEBUG、INFO、WARN、ERROR、ALL、OFF(不区分大小写)。选填，不填则默认从父记录器继承level
 - additivity : 是否追加父 Logger 的输出源(appender)，默认为true，选填。如果只想输出到自己的输出源(appender)，需要设置为 false
 
-logger 还可以包含 0 或多个 <appender-ref> 元素, 将记录的日志使用 appender 进行输出
+logger 还可以包含 0 或多个 appender-ref 元素, 将记录的日志使用 appender 进行输出
 
 
 #### level 的继承
@@ -618,7 +618,7 @@ Logback 是根据包或类的层次结构来确定 logger 的父子关系的
 
 level 的可选值有 TRACE、DEBUG、INFO、WARN、ERROR、ALL、OFF，大小写都可以识别
 
-root 也可以包含 0 或多个 <appender-ref> 元素
+root 也可以包含 0 或多个 appender-ref 元素
 
 
 
