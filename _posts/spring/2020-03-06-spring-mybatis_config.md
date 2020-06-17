@@ -1,8 +1,8 @@
 ---
 layout: post
-title: MyBatis Generator 配置
+title: Spring boot 中 MyBatis Generator 配置与使用
 categories: Spring
-description: MyBatis Generator 配置
+description: Spring boot 中 MyBatis Generator 配置与使用
 keywords: SpringBoot, MyBatis, Generator
 ---
 
@@ -154,6 +154,47 @@ spring.datasource.password=123456
 配置好后，双击 maven 中的 MyBatis Generator 运行
 
 ![](/images/posts/spring/mybatis.png)
+
+
+
+## 使用 MyBatis 注意事项
+
+### 项目最终架构
+
+项目最终的目录结构如下
+![](/images/posts/spring/mybatis1.png)
+
+### 启动类添加 mapper 扫描
+```
+@SpringBootApplication
+@MapperScan(value = "com.piter.mall.user.dao")
+public class MallApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MallApplication.class, args);
+	}
+
+}
+```
+
+### 配置文件设置
+
+application-dev.properties 中添加 mapper location 配置
+
+```
+# mysql
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://10.211.55.5:3306/mall?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+spring.datasource.username=root
+spring.datasource.password=123456
+
+mybatis.mapper-locations=classpath:mapper/*.xml
+```
+
+### 启动自测试
+
+检查是否可以正常操作数据库
+
 
 
 
