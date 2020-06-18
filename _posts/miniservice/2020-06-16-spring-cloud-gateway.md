@@ -144,7 +144,7 @@ spring:
             - Cookie=username,macro
 ```
 
-使用 postman 工具发送带有 cookie 为 username=macro 的请求可以匹配该路由。
+使用 curl 工具发送带有 cookie 为 username=macro 的请求可以匹配该路由。
 ```
 curl http://localhost:9201/user/1 --cookie "username=macro"
 ```
