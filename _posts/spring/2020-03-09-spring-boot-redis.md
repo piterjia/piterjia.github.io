@@ -10,9 +10,10 @@ keywords: SpringBoot, redis, Jedis, Lettuce
 
 从 Spring Boot 2.x 开始 Lettuce 已取代 Jedis 成为首选 Redis 的客户端。当然 Spring Boot 2.x 仍然支持 Jedis，并且你可以任意切换客户端。
 
-<!-- 本文不讲解 redis 的安装，具体的安装见这一篇博客：
+本文不讲解 redis 的安装，具体的安装见这一篇博客：
 
-[redis 安装](../redis/2020-03-08-redis-install.md) -->
+[redis 安装](../redis/2020-03-08-redis-install.md)
+
 
 ## Lettuce
 
