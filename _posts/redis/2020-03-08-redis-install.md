@@ -1,7 +1,7 @@
 ---
 layout: post
 title: linux 安装 redis 
-categories: Spring  Redis
+categories: Redis
 description: linux 安装 redis 
 keywords: linux, redis
 ---
