@@ -32,40 +32,40 @@ Spring Boot 2.0 集成 redis，一般需要4步
 引入 lettuce pool 缓存连接池 、redis 以及 一些常用的依赖。
 
 ```
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <scope>runtime</scope>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <optional>true</optional>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
-		</dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-pool2</artifactId>
-		</dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-pool2</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+    </dependency>
 
-	</dependencies>
+</dependencies>
 ```
 
 - 如果用的是 lettuce 客户端，需要引入 commons-pool2 连接池。
@@ -218,6 +218,66 @@ RedisOperator 类在 BaseRedisOperator 的基础上补充了一下无法按照 R
 #### 自测试
 
 编写自测试代码，进行功能验证。
+
+1、编写 service
+```
+@Service
+public class RedisService {
+    @Autowired
+    private RedisOperator redisOperator;
+
+    public void redisAddKey(String key, String value) {
+        redisOperator.set(key, value);
+    }
+
+    public String redisGetKey(String key) {
+        String redisValue = (String) redisOperator.get(key);
+        return redisValue;
+    }
+
+    public void redisAddUser(String key, Object value) {
+        redisOperator.set(key, value);
+    }
+
+    public User redisGetUser(String key) {
+        User redisValue = (User) redisOperator.get(key);
+        return redisValue;
+    }
+}
+```
+
+2、编写 Controller
+
+```
+@RestController
+@RequestMapping("redis")
+public class RedisController {
+
+    @Autowired
+    RedisService redisService;
+
+    @RequestMapping(value = "add", method = RequestMethod.GET)
+    public String redisAdd(@RequestParam String key, @RequestParam String value){
+        redisService.redisAddKey(key, value);
+
+
+        return redisService.redisGetKey(key);
+    }
+
+    @RequestMapping(value = "addObject", method = RequestMethod.POST)
+    public User redisAdd(@RequestParam String key, @RequestBody User user){
+        redisService.redisAddUser(key, user);
+        return redisService.redisGetUser(key);
+    }
+}
+```
+
+3、postman 发起自测试
+
+可以看到，数据被正确写入 redis 中，spring boot 成功集成 redis 。
+
+![](../../images/posts/spring/spring-redis-1.png)
+
 
 
 ## 总结
