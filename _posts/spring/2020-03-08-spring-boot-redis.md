@@ -8,6 +8,10 @@ keywords: SpringBoot, redis, Jedis, Lettuce
 
 从 Spring Boot 2.x 开始 Lettuce 已取代 Jedis 成为首选 Redis 的客户端。当然 Spring Boot 2.x 仍然支持 Jedis，并且你可以任意切换客户端。
 
+本文不讲解 redis 的安装，具体的安装见这一篇博客：
+
+[redis 安装](../redis/2020-03-08-redis-install.md)
+
 ## Lettuce
 
 Lettuce 是一个可伸缩的线程安全的 Redis 客户端，支持同步、异步和响应式模式。多个线程可以共享一个连接实例，而不必担心多线程并发问题。它基于优秀 Netty NIO 框架构建，支持 Redis 的高级功能，如 Sentinel、集群、流水线、自动重新连接和 Redis 数据模型。
