@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Spring Boot 集成 redis
+title:【Spring Boot系列】Spring Boot 集成 redis
 categories: Spring
-description: Spring boot 中 MyBatis Generator 配置与使用
-keywords: SpringBoot, MyBatis, Generator
+description: Spring Boot 集成 redis
+keywords: SpringBoot, redis, Jedis, Lettuce
 ---
 
 从 Spring Boot 2.x 开始 Lettuce 已取代 Jedis 成为首选 Redis 的客户端。当然 Spring Boot 2.x 仍然支持 Jedis，并且你可以任意切换客户端。
