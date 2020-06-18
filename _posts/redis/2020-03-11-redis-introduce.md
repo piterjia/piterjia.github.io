@@ -1,7 +1,7 @@
 ---
 layout: post
 title: redis 介绍 
-categories: 微服务
+categories: Redis
 description: redis 介绍
 keywords: redis, spring
 ---
