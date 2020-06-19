@@ -373,7 +373,11 @@ public class RedisUtil {
 ```
 
 
+## 参考文档：
 
+https://blog.csdn.net/lifetragedy/article/details/103945885
+
+https://snailclimb.gitee.io/javaguide/#/docs/database/Redis/redis-collection/Redis(5)%E2%80%94%E2%80%94%E4%BA%BF%E7%BA%A7%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4%E5%92%8C%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8
 
 
 
