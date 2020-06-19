@@ -179,7 +179,9 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'MyPassword' WITH GRANT 
 vi /etc/sysconfig/iptables
 ```
 
-添加加黑字体部分字体 
+添加 -A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
+
+打开 3306 端口
 
 ```
 # Firewall configuration written by system-config-firewall
@@ -192,7 +194,7 @@ vi /etc/sysconfig/iptables
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
-**-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT**
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
 -A INPUT -j REJECT --reject-with icmp-host-prohibited
 -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
