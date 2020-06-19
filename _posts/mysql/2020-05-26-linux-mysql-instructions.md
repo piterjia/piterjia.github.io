@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux Mysql 部分指令
+title: Linux Mysql 安装和使用常用指令
 categories: Mysql
 description: Linux Mysql 安装和使用指令
 keywords: mysql, distributed, Linux
