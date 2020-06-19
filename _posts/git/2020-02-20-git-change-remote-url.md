@@ -1,12 +1,13 @@
 ---
 layout: post
 title: git 仓库迁移更改源
-categories: git
+categories: Git
 description: git 仓库迁移，git remote 更改源
 keywords: git, 仓库迁移, 更改源
 ---
 
 ip 变了，git 远程仓库的地址也变了，这个时候就要自己手动修改项目连接到的远程仓库地址
+
 
 
 ## 首先查看你的remote的地址
