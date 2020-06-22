@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用 Spring Boot Profile 实现多环境配置
+title: 【spring boot系列】使用 Spring Boot Profile 实现多环境配置
 categories: Spring
 description: 使用 Spring Boot Profile实现多环境配置
 keywords: SpringBoot, Profile

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java 日志实现框架 Logback 配置详解
+title: 【spring boot系列】Java 日志实现框架 Logback 配置详解
 categories: Spring
 description: Java 日志实现框架 Logback 配置详解
 keywords: SpringBoot, MyBatis, Generator

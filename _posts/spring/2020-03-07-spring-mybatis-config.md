@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring boot 中 MyBatis Generator 配置与使用
+title: 【spring boot系列】 MyBatis Generator 配置与集成使用
 categories: Spring
 description: Spring boot 中 MyBatis Generator 配置与使用
 keywords: SpringBoot, MyBatis, Generator
