@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在 Centos7 上安装 Rabbitmq 与配置
-categories: Mysql
+categories: RabbitMQ
 description: 在Centos7上安装 Rabbitmq 与配置
 keywords: rabbitmq, Linux
 ---
@@ -50,8 +50,6 @@ yum install erlang
 ```
 
 ![](/images/posts/rabbitmq/rabbitmq1.png)
-
-
 
 
 ## 2 安装 RabbitMQ
