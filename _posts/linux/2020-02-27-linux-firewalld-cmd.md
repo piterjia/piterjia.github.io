@@ -29,8 +29,8 @@ firewall-cmd --zone=public --add-port=80/tcp --permanent
 ```
 service iptables status 	#查看iptable防火墙状态
 iptables -L -n -v			#查看iptable防火墙规则
-systemctl start  iptables	#打开iptable防火墙
-systemctl stop firewalld	#关闭iptable防火墙
+systemctl start iptables	#打开iptable防火墙
+systemctl stop iptables	    #关闭iptable防火墙
 yum install  iptables -y	#安装iptable防火墙
 systemctl enable iptables	#开机自启iptable防火墙
 systemctl disable firewalld	#开机自动关闭iptable防火墙

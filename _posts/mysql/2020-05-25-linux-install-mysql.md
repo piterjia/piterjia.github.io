@@ -200,7 +200,7 @@ vi /etc/sysconfig/iptables
 COMMIT
 ```
 
-全部修改完之后重启iptables:service iptables restart
+全部修改完之后重启 iptables:service iptables restart
 
 可以验证一下是否规则都已经生效：iptables -L 这样，我们就完成了CentOS防火墙的设置修改。
 
