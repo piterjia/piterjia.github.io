@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Cloud 中 Ribbon、Feign 以及 Hystrix 的关系
+title: 【SpringCloud系列】 Ribbon、Feign 以及 Hystrix 的关系
 categories: 微服务
 description: Spring Cloud 中 Ribbon、Feign 以及 Hystrix 的关系
 keywords: Spring Cloud微服务熔断, Hystrix超时配置, Ribbon超时配置, Ribbon重试
