@@ -305,27 +305,27 @@ public class SleuthTraceAMain {
 
 完整的项目搭建完毕，依次启动 eureka-server、zipkin-server、sleuth-traceB、sleuth-traceA。使用postman 访问http://localhost:62000/traceA，结果如下
 
-![](../../images/microservice/sleuth1.png)
+![](/images/microservice/sleuth1.png)
 
 访问 http://localhost:62100，即访问 Zipkin 的展示界面，界面显示如图所示：
 
 
-![](../../images/microservice/sleuth3.png)
+![](/images/microservice/sleuth3.png)
 
 
 这个界面主要用来查找服务的调用情况，可以根据服务名、开始时间、结束时间、请求消耗的时间等条件来查找。点击 “Find Trackes” 按钮，界面如图所示。从图可知服务的调用情况，比如服务调用时间、服务的消耗时间，服务调用的链路情况。
 
-![](../../images/microservice/sleuth2.png)
+![](/images/microservice/sleuth2.png)
 
 
 点击其中一个调用链，进入查看详细的调用关系：
 
-![](../../images/microservice/sleuth5.png)
+![](/images/microservice/sleuth5.png)
 
 
 点击Dependences按钮，可以查看服务的依赖关系，在本案例中，它们的依赖关系如图：
 
-![](../../images/microservice/sleuth4.png)
+![](/images/microservice/sleuth4.png)
 
 
 
