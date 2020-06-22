@@ -329,13 +329,13 @@ public class SleuthTraceAMain {
 
 
 
-### 在Sleuth链路中添加自定义 Tag 标签
+## 在Sleuth链路中添加自定义 Tag 标签
 通常我们会在链路日志中添加额外的自定义字段，帮助我们进行链路分析。我们可以借助brave.Tracer类实现这一目标。
 
 修改 slenth traceA 的代码,
 
 
-#### 首先在代码中注入Tracer类：
+### 首先在代码中注入Tracer类：
 
 ```
 private Tracer tracer;
@@ -346,7 +346,7 @@ public void setTracer(Tracer tracer) {
 }
 ```
 
-#### 然后将我们指定的字段添加到当前Span中：
+### 然后将我们指定的字段添加到当前Span中：
 ```
 tracer.currentSpan().tag("transId", "11111");
 tracer.currentSpan().tag("appId", "22222");
@@ -354,7 +354,7 @@ tracer.currentSpan().tag("reqTime", LocalDateTime.now().toString());
 ```
 
 
-#### 整体的代码如下：
+### 整体的代码如下：
 
 ```
 @EnableDiscoveryClient
@@ -404,7 +404,7 @@ public class SleuthTraceAMain {
 ```
 
 
-#### 访问Zipkin服务端可以看到，Tags列中已经包含我们添加的字段。
+### 访问Zipkin服务端可以看到，Tags列中已经包含我们添加的字段。
 
 ![](/images/microservice/sleuth6.png)
 
