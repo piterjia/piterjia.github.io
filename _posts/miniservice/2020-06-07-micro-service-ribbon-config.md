@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【SpringCloud系列】Ribbon 常用配置
+title: 【Spring Cloud系列】Ribbon 常用配置
 categories: 微服务
 description: Ribbon 常用配置
 keywords: Ribbon, spring Cloud, distributed, micro service

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【SpringCloud系列】搭建 Eureka 高可用服务注册中心集群
+title: 【Spring Cloud系列】搭建 Eureka 高可用服务注册中心集群
 categories: 微服务
 description: 搭建 Eureka 高可用服务注册中心集群
 keywords: Eureka, spring Cloud, distributed, micro service

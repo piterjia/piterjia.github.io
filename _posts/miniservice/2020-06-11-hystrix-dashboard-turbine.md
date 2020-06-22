@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【SpringCloud系列】熔断监控 Hystrix Dashboard 和 Turbine
+title: 【Spring Cloud系列】熔断监控 Hystrix Dashboard 和 Turbine
 categories: 微服务
 description: 熔断监控 Hystrix Dashboard 和 Turbine
 keywords: Hystrix Dashboard, Turbine, 熔断监控

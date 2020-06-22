@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【SpringCloud系列】Ribbon 工作原理与负载均衡策略
+title: 【Spring Cloud系列】Ribbon 工作原理与负载均衡策略
 categories: 微服务
 description: Ribbon 工作原理与负载均衡策略
 keywords: Ribbon, spring Cloud, distributed, micro service

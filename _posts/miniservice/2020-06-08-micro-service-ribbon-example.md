@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【SpringCloud系列】Ribbon 使用案例
+title: 【Spring Cloud系列】Ribbon 使用案例
 categories: 微服务
 description: Ribbon 使用案例
 keywords: Ribbon, spring Cloud, distributed, micro service

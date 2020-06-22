@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【SpringCloud系列】Spring Cloud Config 实现配置中心
+title: 【Spring Cloud系列】Spring Cloud Config 实现配置中心
 categories: 微服务
 description: Spring Cloud Config 实现配置中心
 keywords: Spring Cloud Config, Cloud, Config, 配置中心
