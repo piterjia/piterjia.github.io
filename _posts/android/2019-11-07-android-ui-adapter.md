@@ -73,7 +73,7 @@ Android 会识别屏幕可用高度和宽度的最小尺寸的 dp 值（其实�
 
 比如，设计稿宽度是360px，那么开发这边就会把目标 dp 值设为 360dp，在不同的设备中，动态修改 density 值，从而保证(手机像素宽度) px/density 这个值始终是 360dp,这样的话，就能保证 UI 在不同的设备上表现一致了
 
-https://mp.weixin.qq.com/s/d9QCoBP6kV9VSWvVldVVwA
+[一种极低成本的Android屏幕适配方式](https://mp.weixin.qq.com/s/d9QCoBP6kV9VSWvVldVVwA)
 
 ### 优点
 这个方案侵入性很低，而且也没有涉及私有 API，应该也是极不错的方案，暂时也想不到强行修改 density 是否会有其他影响，既然有今日头条的大厂在用，稳定性应当是有保证的
