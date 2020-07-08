@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【spring boot 系列】SpringBoot 集成 RocketMQ
-categories: Zookeeper Spring
+categories: Spring
 description: SpringBoot 集成 RocketMQ
 keywords: RocketMQ, 中间件, Apache, Spring, Spring boot
 ---
