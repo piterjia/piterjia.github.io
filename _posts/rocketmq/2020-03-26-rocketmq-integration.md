@@ -432,7 +432,7 @@ consumer message boyd 呵呵呵
 
 ![](/images/posts/rocketmq/rocketmq-integration-2.png)
 
-消息成功发动并消费：
+消息成功发送并消费：
 
 ![](/images/posts/rocketmq/rocketmq-integration-3.png)
 
