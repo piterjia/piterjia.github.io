@@ -16,8 +16,9 @@ RcoketMQ 是一款低延迟、高可靠、可伸缩、易于使用的消息中�
 - 支持多种消息协议，如 JMS、MQTT 等
 - 分布式高可用的部署架构,满足至少一次消息传递语义
 
-详细的 RcoketMQ 
+详细的 RcoketMQ，大家参考我这篇文章
 
+[RocketMQ 原理简介与入门](2020-03-23-rocketmq-introduce.md)
 
 ## RocketMQ环境安装
 
@@ -68,7 +69,7 @@ public class RocketMQProperties {
 - namesrvAddr 集群地址
 - groupName 分组名称
 
-如有其它需求在这个的基础上进行扩展即可，类中我们已经给了默认值，也可以在配置文件或配置中心中获取配置，配置如下:
+如有其它需求在这个的基础上进行扩展即可，类中我们已经给了默认值，也可以在配置文件( application.properties )或配置中心中获取配置，配置如下:
 
 ```
 # 系统端口号
@@ -96,7 +97,7 @@ rocketmq.consumer.consumeMessageBatchMaxSize=1
 
 #### 创建消费者接口 RocketConsumer.java 
 
-该接口用来约束消费者需要的核心步骤:
+该接口用来约束创建消费者需要的核心步骤:
 - 项目启动的时候，初始化消费者
 - 注册监听
 
@@ -177,33 +178,19 @@ public abstract class AbstractRocketConsumer implements RocketConsumer {
 
 接下来我们编写自动配置类 RocketMQConfiguation.java, **该类用户初始化一个默认的生产者连接，以及加载所有的消费者。**
 
+它的主要的几个注解，简单解释如下：
+
 ```
 @Configuration  #标注为配置类
 @EnableConfigurationProperties({ RocketMQProperties.class })  #使用该配置文件
 @ConditionalOnProperty(prefix = "rocketmq", value = "isEnable", havingValue = "true") # 只有当配置中指定rocketmq.isEnable = true的时候才会生效
 ```
 
-核心内容如下，主要提供了一下几个功能：
+这个类的核心内容如下，主要提供了以下几个功能：
 - 注入一个默认的消息生产者
 - SpringBoot 启动时加载所有消费者
 
 ```
-import com.piter.springbootrocketmq.consumer.AbstractRocketConsumer;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
-import org.apache.rocketmq.client.exception.MQClientException;
-import org.apache.rocketmq.client.producer.DefaultMQProducer;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.util.StringUtils;
-
-import javax.annotation.PostConstruct;
-import java.util.Iterator;
-import java.util.Map;
-
 /**
  * mq配置
  *
@@ -332,7 +319,9 @@ com.piter.springbootrocketmq.config.RocketMQConfiguation
 
 ### 创建默认的消费者 DefaultConsumerMQ.java
 
-创建消费者的步骤非常简单，只需要继承 AbstractRocketConsumer, 然后再加上 Spring 的 @Component 就能够完成消费者的创建，我们可以在类中自定义消费的主题与标签。
+由于我们前面已经创建了自动装配类，从而创建消费者的步骤非常简单。
+
+只需要继承 AbstractRocketConsumer, 然后再加上 Spring 的 @Component 就能够完成消费者的创建，我们可以在类中自定义消费的主题与标签。
 
 在项目中，可以根据需求，当消费者创建失败的时候是否继续启动工程。
 
@@ -436,16 +425,16 @@ consumer message boyd 呵呵呵
 
 主题如下：
 
-![](../../images/posts/rocketmq/rocketmq-integration-topic.png)
+![](/images/posts/rocketmq/rocketmq-integration-topic.png)
 
 
 消费者成功注册：
 
-![](../../images/posts/rocketmq/rocketmq-integration-2.png)
+![](/images/posts/rocketmq/rocketmq-integration-2.png)
 
 消息成功发动并消费：
 
-![](../../images/posts/rocketmq/rocketmq-integration-3.png)
+![](/images/posts/rocketmq/rocketmq-integration-3.png)
 
 
 
