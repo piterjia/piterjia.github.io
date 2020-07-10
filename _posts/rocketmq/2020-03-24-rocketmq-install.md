@@ -85,7 +85,7 @@ rocketmq默认不带可视化控制台，需要去单独编译一个工具 https
 ![](/images/posts/rocketmq/rocketmq-consule-1.png)
 
 
-**记得在防火墙中，打开 9876 端口**
+注意，一定要 **记得在防火墙中，打开 9876 端口** ，否则控制台无法正常连接rocketmq 。
 
 具体如何操作，可以参考我的这篇文章
 
@@ -96,6 +96,7 @@ rocketmq默认不带可视化控制台，需要去单独编译一个工具 https
 ## 参考资料
 
 [rocketmq 官方文档](http://rocketmq.apache.org/docs/quick-start/)
+
 [rocketmq 官方中文文档](https://rocketmq-1.gitbook.io/rocketmq-connector/quick-start/qian-qi-zhun-bei/dan-ji-huan-jing)
 
 
