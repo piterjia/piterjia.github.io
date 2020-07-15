@@ -265,7 +265,6 @@ public class Client {
 ```
 
 关键代码是如下几句，Client 首先向 pipeline 中添加 ProtobufVarint32FrameDecoder， 它主要用于半包处理，然后添加 ProtobufDecoder 解码器，它的参数是需要解码的类型。
-：
 
 ```
 ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
