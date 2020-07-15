@@ -6,7 +6,9 @@ description: 基于 netty 的 Marshalling 序列化机制
 keywords: Netty, 高性能, Marshalling
 ---
 
-JBoss Marshalling 是一个Java 对象序列化包,对 JDK 默认的序列化框架进行了优化,但又保持跟 Java.io.Serializable 接口的兼容,同时增加了一些可调的参数和附件的特性, 这些参数和附加的特性, 这些参数和特性可通过工厂类进行配置.
+JBoss Marshalling 是一个 Java 对象序列化包，对 JDK 默认的序列化框架进行了优化，但又保持跟 Java.io.Serializable 接口的兼容
+
+同时增加了一些可调的参数和附件的特性，这些参数和附加的特性， 这些参数和特性可通过工厂类进行配置。
 
 ## 导入相关jar包
 
@@ -28,11 +30,6 @@ JBoss Marshalling 是一个Java 对象序列化包,对 JDK 默认的序列化框
     <groupId>io.netty</groupId>
     <artifactId>netty-all</artifactId>
     <version>4.1.12.Final</version>
-</dependency>
-<dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
-    <version>25.1-jre</version>
 </dependency>
 <dependency>
     <groupId>org.jboss.marshalling</groupId>
