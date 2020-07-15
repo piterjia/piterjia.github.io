@@ -8,11 +8,11 @@ keywords: Zookeeper, 中间件, Apache, Spring, Spring boot
 
 本文主要介绍 SpringBoot 集成 Zookeeper，关于 Zookeeper 相关的概念，参考我其他的几篇文章。
 
-[ZooKeeper 原理简介与使用场景](../zookeeper/2020-05-28-introduce-zookeeper.md)
+[ZooKeeper 原理简介与使用场景](../zookeeper/2020-03-06-introduce-zookeeper.md)
 
-[ZooKeeper 集群环境搭建与配置](../zookeeper/2020-05-29-zookeeper-cluster-install.md)
+[ZooKeeper 集群环境搭建与配置](../zookeeper/2020-03-08-zookeeper-cluster-install.md)
 
-[ZooKeeper 常用命令行操作](../zookeeper/2020-06-01-zookeeper-common-cmd.md)
+[ZooKeeper 常用命令行操作](../zookeeper/2020-03-09-zookeeper-common-cmd.md)
 
 ## pom.xml引入 zookeeper 依赖
 
