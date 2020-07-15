@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Netty 简介与架构原理浅析
+title: 【Netty 系列】Netty 简介与架构原理浅析
 categories: Netty
 description: Netty 简介与架构原理浅析
 keywords: Netty, 高性能, 架构原理
