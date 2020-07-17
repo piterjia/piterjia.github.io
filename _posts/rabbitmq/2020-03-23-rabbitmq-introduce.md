@@ -384,13 +384,13 @@ public class MyConsumer {
 
 缺点：对数据库有多次操作。不适用于高并发业务。
 
-![](../../images/posts/rabbitmq/rabbitmq-info-10.png)
+![](/images/posts/rabbitmq/rabbitmq-info-10.png)
 
 
 ### 解决方案2 
 消息的延迟投递，做二次确认，回调检查。
 
-![](../../images/posts/rabbitmq/rabbitmq-info-11.png)
+![](/images/posts/rabbitmq/rabbitmq-info-11.png)
 
 ```
 拆出一个回调服务。将落库、检查等操作安排至回调服务上。
